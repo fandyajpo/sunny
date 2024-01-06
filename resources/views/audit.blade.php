@@ -31,30 +31,5 @@
 
 </div>
 
-<script>
-  async function del(id, title) {
-    const sure = confirm(`Yakin mau hapus? ${title}`)
-    if (!sure) return;
-    try {
-      document.querySelector('input[name="_method"]').value = 'DELETE'
-      const csrfToken = document.querySelector(
-        'meta[name="csrf-token"]'
-      ).content;
-      const request = await fetch(
-        `http://localhost:8001/category/${id}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-TOKEN": csrfToken,
-          },
-        }
-      );
-      return window.location.reload();
-    } catch (error) {
-      return error;
-    }
-  }
-</script>
-
 
 @endsection
