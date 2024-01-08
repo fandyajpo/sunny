@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $u = CategoryModel::find($request->id);
         AuditModel::create([
             'name' => $u->name,
-            'message' => "Someone is updating Category with the name",
+            'message' => "Someone is remove Category with the name",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

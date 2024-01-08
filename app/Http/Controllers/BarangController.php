@@ -53,7 +53,7 @@ class BarangController extends Controller
         $u = BarangModel::find($request->id);
         AuditModel::create([
             'name' => $u->name,
-            'message' => "Someone is updating Barang with the name",
+            'message' => "Someone is remove Barang with the name",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

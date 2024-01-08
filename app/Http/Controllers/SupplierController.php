@@ -47,7 +47,7 @@ class SupplierController extends Controller
         $u = SupplierModel::find($request->id);
         AuditModel::create([
             'name' => $u->name,
-            'message' => "Someone is updating Supplier with the name",
+            'message' => "Someone is remove Supplier with the name",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

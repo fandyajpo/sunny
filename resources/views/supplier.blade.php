@@ -73,7 +73,7 @@
         'meta[name="csrf-token"]'
       ).content;
       const request = await fetch(
-        `http://localhost:8001/supplier/${id}`, {
+        `http://localhost:8000/supplier/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
