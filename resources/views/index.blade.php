@@ -2,6 +2,7 @@
 @section('content')
 <div>
     <div>
+
         <form method="POST" id="barangForm" action="/barang/" class="grid grid-cols-2 gap-2 justify-center py-12 px-4">
             @csrf
             @method("POST")
@@ -49,7 +50,12 @@
                 </div>
             </div>
         </form>
-        <hr />
+        <div class="px-4">
+            <div class="bg-blue-500 p-4 w-fit  text-white rounded-md">
+                <a href="{{ URL::to('/summary') }}">Export PDF</a>
+            </div>
+            <hr class="mt-4" />
+        </div>
     </div>
 </div>
 <div>

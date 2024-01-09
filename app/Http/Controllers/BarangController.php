@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\BarangModel;
 use App\Models\AuditModel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BarangController extends Controller
 {
@@ -58,5 +59,11 @@ class BarangController extends Controller
             'updated_at' => Carbon::now(),
         ]);
         $u->delete();
+    }
+    public function Summary(Request $request)
+    {
+        $data = BarangModel::all();
+        $pdf = Pdf::loadView('pdf', compact("data"));
+        return $pdf->download('invoice.pdf');
     }
 }

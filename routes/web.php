@@ -26,3 +26,4 @@ Route::delete('/supplier/{id}', [SupplierController::class, 'Delete']);
 
 // SUMMARY
 Route::get('/audit', [Controller::class, 'AuditPage']);
+Route::get('/summary', [BarangController::class, 'Summary']);
